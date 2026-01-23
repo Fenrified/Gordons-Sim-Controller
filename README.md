@@ -74,7 +74,7 @@ Open the project using **Arduino IDE**.
 
 All configuration is done in inputs_config.h.
 
-You will define **three arrays**:
+You will define your configuration in **three arrays**:
 
 - `predicates[]`
 - `virtualKeys[]`
