@@ -86,7 +86,7 @@ No changes to the main `.ino` file are required.
 
 ## Predicates
 
-Predicates are **named boolean flags** used to enable or disable VirtualKeys.
+Predicates are **named boolean flags** used to enable or disable Virtual Keys.
 
 They allow you to build:
 - Modes
