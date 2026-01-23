@@ -32,7 +32,7 @@ Predicates are optional, but unlock advanced behavior.
 
 ---
 
-### 2. VirtualKeys
+### 2. Virtual Keys
 
 Logical keyboard actions that may:
 - Send a key
@@ -43,7 +43,7 @@ Think of these as **“what happens”**.
 
 ---
 
-### 3. PhysicalInputs
+### 3. Physical Inputs
 
 GPIO-connected hardware inputs such as:
 - Buttons
