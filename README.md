@@ -49,7 +49,7 @@ GPIO-connected hardware inputs such as:
 - Buttons
 - Toggles
 
-Each physical input is mapped to one or more VirtualKeys.
+Each physical input is mapped to one or more Virtual Keys.
 
 Think of these as **“what you press”**.
 
