@@ -207,10 +207,30 @@ TOGGLE_3WAY_PRED("selector", 7, 8, "modeA", "modeB", "modeC")
 
 ---
 
-## Other types of switches
-It is completely possible to use other types of switches than buttons and toggles.
+## Endless Possibilities
+There are more possibilities than what is mentioned in the above.
 
-#### Example Rotary Switch
+Here are some examples.
+
+#### Prevent holding a key
+If you have a button you don't want to be able to hold you can use TOGGLE instead of BUTTON.
+```c
+BUTTON("key1_b", 11, "myKey"),
+TOGGLE_2WAY_KEY("key1_t", 11, "myKey", nullptr),
+```
+> The two Physical Inputs does the exact same thing, except the toggle will always tap the key isntead of holding it.
+>
+> Use `nullptr` instead of a key or predicate to make it do nothing.
+
+#### One Button, Multiple Key Presses
+It is possible to add multiple virtual keys to the same GPIO pin.
+```c
+BUTTON("key1", 11, "Key_A"),
+BUTTON("key2", 11, "Key_B"),
+```
+> When pin 11 goes `HIGH` both keys will be sent in order from top to bottom.
+
+#### Rotary Switch
 An example of a rotary switch with 5 position, each position wired to pin 11 to 15.
 ```c
 TOGGLE_2WAY_KEY("rot1", 11, "key_1", nullptr),
