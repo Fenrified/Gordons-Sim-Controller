@@ -214,11 +214,15 @@ Here are some examples.
 
 #### Prevent holding a key
 If you have a button you don't want to be able to hold you can use TOGGLE instead of BUTTON.
+
+Consider the difference in the 2 lines below:
 ```c
 BUTTON("key1_b", 11, "myKey"),
+```
+```c
 TOGGLE_2WAY_KEY("key1_t", 11, "myKey", nullptr),
 ```
-> The two Physical Inputs does the exact same thing, except the toggle will always tap the key isntead of holding it.
+> The two Physical Inputs does the exact same thing, except the toggle will always tap the key instead of holding it.
 >
 > Use `nullptr` instead of a key or predicate to make it do nothing.
 
