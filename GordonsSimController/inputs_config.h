@@ -15,10 +15,9 @@ struct Predicate {
 /* -----------------------------
    PREDICATE DEFINITIONS - EDIT THIS
 ----------------------------- */
-
 Predicate predicates[] = {
-    PRED("mode"),
-    PRED("someLayer")
+    PRED("normal"),
+    PRED("combat)
 };
 
 /* -----------------------------
@@ -59,10 +58,18 @@ const uint8_t MOD_CTRL_SHIFT_ALT[3] = {KEY_LEFT_CTRL, KEY_LEFT_SHIFT, KEY_LEFT_A
    VIRTUAL KEY DEFINITIONS - EDIT THIS
 ----------------------------- */
 VirtualKey virtualKeys[] = {
-    VIRTUAL_KEY("key_9", '9'),
-    VIRTUAL_KEY_MOD("key_i_ctrl", 'i', MOD_CTRL),
-    VIRTUAL_KEY_PRED("key_b", 'b', "mode"),               
-    VIRTUAL_KEY_FULL("key_d_alt", 'd', MOD_ALT, "mode"),  
+    VIRTUAL_KEY("power_on", 'p'),
+    VIRTUAL_KEY_MOD("power_off", 'p', MOD_ALT),
+    VIRTUAL_KEY("gear_down", '0'),
+    VIRTUAL_KEY("gear_up", '9'),
+    VIRTUAL_KEY("nav_lights_on", 'n'),
+    VIRTUAL_KEY_MOD("nav_lights_off", 'n', MOD_ALT),
+    VIRTUAL_KEY("headlights_on", 'h'),
+    VIRTUAL_KEY_MOD("headlights_off", 'h', MOD_ALT),
+    VIRTUAL_KEY("boost", 'b'),
+    VIRTUAL_KEY("autoland", 'l'),
+    VIRTUAL_KEY("camera", KEY_F4),
+    VIRTUAL_KEY("eject", KEY_BACKSPACE) 
 };
 
 /* -----------------------------
@@ -120,15 +127,14 @@ struct PhysicalInput {
    PHYSICAL INPUT DEFINITIONS - EDIT THIS
 ----------------------------- */
 PhysicalInput physicalInputs[] = {
-    // Buttons
-    BUTTON("btn1", 17, "key_b"),
-    BUTTON("btn2", 18, "key_d_alt"),
-
-    // Key toggles
-    TOGGLE_2WAY_KEY("toggle1", 16, "key_i_ctrl", "key_9"),
-
-    // Predicate toggles
-    TOGGLE_2WAY_PRED("pred_toggle1", 26, "mode", nullptr),
+    TOGGLE_2WAY_KEY("power", 9, "power_on", "power_off"),
+    TOGGLE_2WAY_KEY("gear", 8, "gear_up", "gear_down"),
+    TOGGLE_2WAY_KEY("nav_lights", 7, "nav_lights_on", "nav_lights_off"),
+    TOGGLE_2WAY_KEY("headlights", 6, "headlights_on", "headlights_off"),
+    BUTTON("boost", 10, "boost"),
+    BUTTON("autoland", 11, "autoland"),
+    BUTTON("camera", 12, "camera"),
+    BUTTON("eject", 13, "eject")
 };
 
 /* --- Counts --- */
