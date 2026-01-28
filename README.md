@@ -207,6 +207,62 @@ TOGGLE_3WAY_PRED("selector", 7, 8, "modeA", "modeB", "modeC")
 
 ---
 
+## Examples
+We will use a button box with 4 toggle switches and 4 momentary button switches as an example.
+![Control Panel](ExampleImages/ControlPanel.jpg)
+![Wiring Diagram](ExampleImages/WiringDiagram.png)
+
+### Basic Example
+In this example we want the toggles and buttons to do the following:
+- `Toggle 1 - Power`
+- `Toggle 2 - Landing Gear`
+- `Toggle 3 - Nav Lights`
+- `Toggle 4 - Headlights`
+- `Button 1 - Boost`
+- `Button 2 - Autoland`
+- `Button 3 - Camera`
+- `Button 4 - Eject`
+
+#### Predicates
+No predicates used in this example.
+
+#### Virtual Keys
+```c
+VIRTUAL_KEY("power_on", 'p')
+
+VIRTUAL_KEY_MOD("power_off", 'p', MOD_ALT)
+
+VIRTUAL_KEY("gear_down", '0')
+
+VIRTUAL_KEY("gear_up", '9')
+
+VIRTUAL_KEY("nav_lights_on", 'n')
+
+VIRTUAL_KEY_MOD("nav_lights_off", 'n', MOD_ALT)
+
+VIRTUAL_KEY("headlights_on", 'h')
+
+VIRTUAL_KEY_MOD("headlights_off", 'h', MOD_ALT)
+
+VIRTUAL_KEY("boost", 'b')
+
+VIRTUAL_KEY("Autoland", 'l
+
+VIRTUAL_KEY("Camera", KEY_F4)
+
+VIRTUAL_KEY("Eject", BACKSPACE)
+```
+
+####Physical Inputs
+
+TODO
+
+### Example With Predicates
+
+TODO
+
+---
+
 ## Endless Possibilities
 There are more possibilities than what is mentioned in the above.
 
