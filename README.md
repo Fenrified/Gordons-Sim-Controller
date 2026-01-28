@@ -140,6 +140,43 @@ VIRTUAL_KEY_PRED("key_b", 'b', "mode")
 VIRTUAL_KEY_FULL("key_x", 'x', MOD_SHIFT, "mode")
 ```
 
+#### Special Keys
+It is possible to pass special keys and function keys.
+- `KEY_F1`
+- `KEY_F2`
+- `KEY_F3`
+- `KEY_F4`
+- `KEY_F5`
+- `KEY_F6`
+- `KEY_F7`
+- `KEY_F8`
+- `KEY_F9`
+- `KEY_F10`
+- `KEY_F11`
+- `KEY_F12`
+- `KEY_RETURN`
+- `KEY_ESC`
+- `KEY_BACKSPACE`
+- `KEY_TAB`
+- `KEY_SPACE`
+- `KEY_LEFT_CTRL`
+- `KEY_LEFT_SHIFT`
+- `KEY_LEFT_ALT`
+- `KEY_LEFT_GUI`
+- `KEY_RIGHT_CTRL`
+- `KEY_RIGHT_SHIFT`
+- `KEY_RIGHT_ALT`
+- `KEY_RIGHT_GUI`
+- `KEY_UP_ARROW`
+- `KEY_DOWN_ARROW`
+- `KEY_LEFT_ARROW`
+- `KEY_RIGHT_ARROW`
+
+Example:
+```c
+VIRTUAL_KEY("Jump", KEY_SPACE)
+```
+
 ---
 
 ## Physical Inputs
@@ -209,8 +246,8 @@ TOGGLE_3WAY_PRED("selector", 7, 8, "modeA", "modeB", "modeC")
 
 ## Examples
 We will use a button box with 4 toggle switches and 4 momentary button switches as an example.
-![Control Panel](ExampleImages/ControlPanel.jpg)
-![Wiring Diagram](ExampleImages/WiringDiagram.png)
+<img src="ExampleImages/ControlPanel.jpg" width="400">
+<img src="ExampleImages/WiringDiagram.png" width="400">
 
 ### Basic Example
 In this example we want the toggles and buttons to do the following:
@@ -228,38 +265,125 @@ No predicates used in this example.
 
 #### Virtual Keys
 ```c
-VIRTUAL_KEY("power_on", 'p')
+VIRTUAL_KEY("power_on", 'p'),
 
-VIRTUAL_KEY_MOD("power_off", 'p', MOD_ALT)
+VIRTUAL_KEY_MOD("power_off", 'p', MOD_ALT),
 
-VIRTUAL_KEY("gear_down", '0')
+VIRTUAL_KEY("gear_down", '0'),
 
-VIRTUAL_KEY("gear_up", '9')
+VIRTUAL_KEY("gear_up", '9'),
 
-VIRTUAL_KEY("nav_lights_on", 'n')
+VIRTUAL_KEY("nav_lights_on", 'n'),
 
-VIRTUAL_KEY_MOD("nav_lights_off", 'n', MOD_ALT)
+VIRTUAL_KEY_MOD("nav_lights_off", 'n', MOD_ALT),
 
-VIRTUAL_KEY("headlights_on", 'h')
+VIRTUAL_KEY("headlights_on", 'h'),
 
-VIRTUAL_KEY_MOD("headlights_off", 'h', MOD_ALT)
+VIRTUAL_KEY_MOD("headlights_off", 'h', MOD_ALT),
 
-VIRTUAL_KEY("boost", 'b')
+VIRTUAL_KEY("boost", 'b'),
 
-VIRTUAL_KEY("Autoland", 'l
+VIRTUAL_KEY("autoland", 'l'),
 
-VIRTUAL_KEY("Camera", KEY_F4)
+VIRTUAL_KEY("camera", KEY_F4),
 
-VIRTUAL_KEY("Eject", BACKSPACE)
+VIRTUAL_KEY("eject", KEY_BACKSPACE)
 ```
 
-####Physical Inputs
+#### Physical Inputs
+```c
+TOGGLE_2WAY_KEY("power", 9, "power_on", "power_off"),
 
-TODO
+TOGGLE_2WAY_KEY("gear", 8, "gear_up", "gear_down"),
+
+TOGGLE_2WAY_KEY("nav_lights", 7, "nav_lights_on", "nav_lights_off"),
+
+TOGGLE_2WAY_KEY("headlights", 6, "headlights_on", "headlights_off"),
+
+BUTTON("boost", 10, "boost"),
+
+BUTTON("autoland", 11, "autoland"),
+
+BUTTON("camera", 12, "camera"),
+
+BUTTON("eject", 13, "eject")
+```
 
 ### Example With Predicates
+In this example we want to have a toggle switch between Combat Mode and Normal Mode, when in Combat Mode the buttons selects a weapon instead.
+We will have the following buttons and toggles:
+- `Toggle 1 - Power`
+- `Toggle 2 - Landing Gear`
+- `Toggle 3 - Nav Lights`
+- `Toggle 4 - Normal/Combat Mode Selector`
+- `Button 1 - Boost | Weapon 1`
+- `Button 2 - Autoland | Weapon 2`
+- `Button 3 - Camera | Weapon 3`
+- `Button 4 - Eject | Weapon 4`
 
-TODO
+#### Predicates
+```c
+PRED("normal"),
+PRED("combat)
+```
+
+#### Virtual Keys
+```c
+VIRTUAL_KEY("power_on", 'p'),
+
+VIRTUAL_KEY_MOD("power_off", 'p', MOD_ALT),
+
+VIRTUAL_KEY("gear_down", '0'),
+
+VIRTUAL_KEY("gear_up", '9'),
+
+VIRTUAL_KEY("nav_lights_on", 'n'),
+
+VIRTUAL_KEY_MOD("nav_lights_off", 'n', MOD_ALT),
+
+VIRTUAL_KEY("boost", 'b'),
+
+VIRTUAL_KEY("autoland", 'l'),
+
+VIRTUAL_KEY("camera", KEY_F4),
+
+VIRTUAL_KEY("eject", KEY_BACKSPACE)
+
+VIRTUAL_KEY("weapon_1", '1'),
+
+VIRTUAL_KEY("weapon_2", '2'),
+
+VIRTUAL_KEY("weapon_3", '3'),
+
+VIRTUAL_KEY("weapon_4", '4')
+```
+
+#### Physical Inputs
+```c
+TOGGLE_2WAY_KEY("power", 9, "power_on", "power_off"),
+
+TOGGLE_2WAY_KEY("gear", 8, "gear_up", "gear_down"),
+
+TOGGLE_2WAY_KEY("nav_lights", 7, "nav_lights_on", "nav_lights_off"),
+
+TOGGLE_2WAY_PRED("mode_select", 6, "normal", "combat"),
+
+BUTTON("boost", 10, "boost"),
+
+BUTTON("wpn_1", 10, "weapon_1"),
+
+BUTTON("autoland", 11, "autoland"),
+
+BUTTON("wpn_2", 11, "weapon_2"),
+
+BUTTON("camera", 12, "camera"),
+
+BUTTON("wpn_3", 12, "weapon_3"),
+
+BUTTON("eject", 13, "eject"),
+
+BUTTON("wpn_4", 13, "weapon_4")
+```
 
 ---
 
