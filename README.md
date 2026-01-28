@@ -266,46 +266,28 @@ No predicates used in this example.
 #### Virtual Keys
 ```c
 VIRTUAL_KEY("power_on", 'p'),
-
 VIRTUAL_KEY_MOD("power_off", 'p', MOD_ALT),
-
 VIRTUAL_KEY("gear_down", '0'),
-
 VIRTUAL_KEY("gear_up", '9'),
-
 VIRTUAL_KEY("nav_lights_on", 'n'),
-
 VIRTUAL_KEY_MOD("nav_lights_off", 'n', MOD_ALT),
-
 VIRTUAL_KEY("headlights_on", 'h'),
-
 VIRTUAL_KEY_MOD("headlights_off", 'h', MOD_ALT),
-
 VIRTUAL_KEY("boost", 'b'),
-
 VIRTUAL_KEY("autoland", 'l'),
-
 VIRTUAL_KEY("camera", KEY_F4),
-
 VIRTUAL_KEY("eject", KEY_BACKSPACE)
 ```
 
 #### Physical Inputs
 ```c
 TOGGLE_2WAY_KEY("power", 9, "power_on", "power_off"),
-
 TOGGLE_2WAY_KEY("gear", 8, "gear_up", "gear_down"),
-
 TOGGLE_2WAY_KEY("nav_lights", 7, "nav_lights_on", "nav_lights_off"),
-
 TOGGLE_2WAY_KEY("headlights", 6, "headlights_on", "headlights_off"),
-
 BUTTON("boost", 10, "boost"),
-
 BUTTON("autoland", 11, "autoland"),
-
 BUTTON("camera", 12, "camera"),
-
 BUTTON("eject", 13, "eject")
 ```
 
@@ -330,58 +312,34 @@ PRED("combat)
 #### Virtual Keys
 ```c
 VIRTUAL_KEY("power_on", 'p'),
-
 VIRTUAL_KEY_MOD("power_off", 'p', MOD_ALT),
-
 VIRTUAL_KEY("gear_down", '0'),
-
 VIRTUAL_KEY("gear_up", '9'),
-
 VIRTUAL_KEY("nav_lights_on", 'n'),
-
 VIRTUAL_KEY_MOD("nav_lights_off", 'n', MOD_ALT),
-
 VIRTUAL_KEY("boost", 'b'),
-
 VIRTUAL_KEY("autoland", 'l'),
-
 VIRTUAL_KEY("camera", KEY_F4),
-
 VIRTUAL_KEY("eject", KEY_BACKSPACE)
-
 VIRTUAL_KEY("weapon_1", '1'),
-
 VIRTUAL_KEY("weapon_2", '2'),
-
 VIRTUAL_KEY("weapon_3", '3'),
-
 VIRTUAL_KEY("weapon_4", '4')
 ```
 
 #### Physical Inputs
 ```c
 TOGGLE_2WAY_KEY("power", 9, "power_on", "power_off"),
-
 TOGGLE_2WAY_KEY("gear", 8, "gear_up", "gear_down"),
-
 TOGGLE_2WAY_KEY("nav_lights", 7, "nav_lights_on", "nav_lights_off"),
-
 TOGGLE_2WAY_PRED("mode_select", 6, "normal", "combat"),
-
 BUTTON("boost", 10, "boost"),
-
 BUTTON("wpn_1", 10, "weapon_1"),
-
 BUTTON("autoland", 11, "autoland"),
-
 BUTTON("wpn_2", 11, "weapon_2"),
-
 BUTTON("camera", 12, "camera"),
-
 BUTTON("wpn_3", 12, "weapon_3"),
-
 BUTTON("eject", 13, "eject"),
-
 BUTTON("wpn_4", 13, "weapon_4")
 ```
 
@@ -410,7 +368,7 @@ TOGGLE_2WAY_KEY("key1_t", 11, "myKey", nullptr),
 It is possible to add multiple virtual keys to the same GPIO pin.
 ```c
 BUTTON("key1", 11, "Key_A"),
-BUTTON("key2", 11, "Key_B"),
+BUTTON("key2", 11, "Key_B")
 ```
 > When pin 11 goes `HIGH` both keys will be sent in order from top to bottom.
 
