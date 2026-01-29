@@ -2,7 +2,7 @@
 
 A **config-driven Arduino / RP2040 HID input system** for building physical control panels—buttons, 2-way toggles, 3-way toggles, and more—that send **keyboard input** to a PC.
 
-Designed for **Raspberry Pi Pico (Arduino core)**, but compatible with any Arduino board that supports **USB HID**.
+Designed for **Raspberry Pi Pico**, but compatible with any Arduino board that supports **USB HID**.
 
 ---
 
