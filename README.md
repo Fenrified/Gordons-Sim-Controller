@@ -306,7 +306,7 @@ We will have the following buttons and toggles:
 #### Predicates
 ```c
 PRED("normal"),
-PRED("combat)
+PRED("combat")
 ```
 
 #### Virtual Keys
@@ -320,7 +320,7 @@ VIRTUAL_KEY_MOD("nav_lights_off", 'n', MOD_ALT),
 VIRTUAL_KEY("boost", 'b'),
 VIRTUAL_KEY("autoland", 'l'),
 VIRTUAL_KEY("camera", KEY_F4),
-VIRTUAL_KEY("eject", KEY_BACKSPACE)
+VIRTUAL_KEY("eject", KEY_BACKSPACE),
 VIRTUAL_KEY("weapon_1", '1'),
 VIRTUAL_KEY("weapon_2", '2'),
 VIRTUAL_KEY("weapon_3", '3'),
