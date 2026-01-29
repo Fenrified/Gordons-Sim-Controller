@@ -317,14 +317,14 @@ VIRTUAL_KEY("gear_down", '0'),
 VIRTUAL_KEY("gear_up", '9'),
 VIRTUAL_KEY("nav_lights_on", 'n'),
 VIRTUAL_KEY_MOD("nav_lights_off", 'n', MOD_ALT),
-VIRTUAL_KEY("boost", 'b'),
-VIRTUAL_KEY("autoland", 'l'),
-VIRTUAL_KEY("camera", KEY_F4),
-VIRTUAL_KEY("eject", KEY_BACKSPACE),
-VIRTUAL_KEY("weapon_1", '1'),
-VIRTUAL_KEY("weapon_2", '2'),
-VIRTUAL_KEY("weapon_3", '3'),
-VIRTUAL_KEY("weapon_4", '4')
+VIRTUAL_KEY_PRED("boost", 'b', "normal"),
+VIRTUAL_KEY_PRED("autoland", 'l', "normal"),
+VIRTUAL_KEY_PRED("camera", KEY_F4, "normal"),
+VIRTUAL_KEY_PRED("eject", KEY_BACKSPACE, "normal"),
+VIRTUAL_KEY_PRED("weapon_1", '1', "combat"),
+VIRTUAL_KEY_PRED("weapon_2", '2', "combat"),
+VIRTUAL_KEY_PRED("weapon_3", '3', "combat"),
+VIRTUAL_KEY_PRED("weapon_4", '4', "combat")
 ```
 
 #### Physical Inputs
