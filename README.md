@@ -72,16 +72,25 @@ Open the project using **Arduino IDE**.
 
 ## Configuration
 
-All configuration is done in inputs_config.h.
+The project contains 3 files:
+- `GordonsSimController.ino` : Main program and logic. Do not edit this.
+- `inputs_definitions.h` : Defines input objects. Do not edit this.
+- `inputs_config.h` : The config you want to edit.
+
+All configuration is done in `inputs_config.h`.
 
 You will define your configuration in **three arrays**:
+- `Predicate predicates[]`
+- `VirtualKey virtualKeys[]`
+- `PhysicalInput physicalInputs[]`
 
-- `predicates[]`
-- `virtualKeys[]`
-- `physicalInputs[]`
-
-No changes to the main `.ino` file are required.
-
+You will enter your configuration into the arrays like this:
+```c
+VirtualKey virtualKeys[] = {
+    VIRTUAL_KEY("power_on", 'p'),
+    VIRTUAL_KEY_MOD("power_off", 'p', MOD_ALT)
+}
+```
 ---
 
 ## Predicates
